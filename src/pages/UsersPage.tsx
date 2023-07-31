@@ -38,8 +38,8 @@ const UsersPage = () => {
     getData();
   }, []);
   return (
-    <div className="mx-auto px-10 flex flex-wrap">
-      <div className="flex gap-x-10 w-full gap-y-10 flex-wrap mt-10">
+    <div className="mx-auto px-10 flex flex-wrap bg-gradientBg">
+      <div className="flex gap-x-[3.2rem] w-full gap-y-10 flex-wrap mt-10">
         {data?.map((item, index) => {
           return (
             <div className="group relative block bg-black w-80 h-[400]" key={item.id}>

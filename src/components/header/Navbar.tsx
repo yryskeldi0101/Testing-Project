@@ -1,17 +1,31 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import clsx from 'clsx';
+import { NavLink, useLocation } from 'react-router-dom';
 const Navbar = () => {
+  const location = useLocation();
   return (
     <div>
-      <ul className="flex items-center space-x-8 text-2xl text-white">
+      <ul className="flex items-center space-x-8 sm:text-2xl text-sm text-white">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink className={clsx(location.pathname === '/' && 'text-red-700 font-bold')} to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/users">Users</NavLink>
+          <NavLink
+            className={clsx(location.pathname === '/users' && 'text-red-700 font-bold')}
+            to="/users"
+          >
+            Users
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/weather">Weather</NavLink>
+          <NavLink
+            className={clsx(location.pathname === '/weather' && 'text-red-700 font-bold')}
+            to="/weather"
+          >
+            Weather
+          </NavLink>
         </li>
       </ul>
     </div>

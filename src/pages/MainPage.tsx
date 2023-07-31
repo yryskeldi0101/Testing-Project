@@ -6,12 +6,13 @@ type ArrayType = {
 };
 const MainPage = () => {
   const [array, setArray] = useState<ArrayType[]>([]);
+  const [num, setNum] = useState<number>(1);
   const clickHandler = () => {
-    let num = 1;
+    setNum((prev) => prev + 1);
     const newItem: ArrayType = {
       item: 'Item',
       id: Math.random(),
-      number: (num = num + 1)
+      number: num
     };
     setArray([...array, newItem]);
   };
@@ -20,23 +21,23 @@ const MainPage = () => {
     setArray(filtered);
   };
   return (
-    <div className="flex flex-col items-center w-full h-full">
+    <div className="flex flex-col items-center w-full h-screen bg-gradientBg">
       <button onClick={clickHandler} className="btn btn-primary my-10">
         Click me
       </button>
       <div className="overflow-x-auto">
-        <table className="table w-full">
+        <table className="table w-[500px]">
           <thead>
-            <tr>
+            <tr className="text-black text-3xl font-bold">
               <th>Num:</th>
               <th>Item Name:</th>
-              <th>Action:</th>
+              <th>Actions:</th>
             </tr>
           </thead>
           <tbody>
             {array?.map((item) => {
               return (
-                <tr className="hover:bg-base-200" key={item.id}>
+                <tr className="hover:bg-base-200 text-blue-800 text-2xl font-bold" key={item.id}>
                   <th>{item.number}</th>
                   <td>{item.item}</td>
                   <td>

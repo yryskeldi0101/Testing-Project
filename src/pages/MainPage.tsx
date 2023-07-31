@@ -25,12 +25,12 @@ const MainPage = () => {
         Click me
       </button>
       <div className="overflow-x-auto">
-        <table className="table w-[500px]">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>Num:</th>
               <th>Item Name:</th>
-              <th>Actions:</th>
+              <th>Action:</th>
             </tr>
           </thead>
           <tbody>

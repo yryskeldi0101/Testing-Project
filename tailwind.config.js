@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Graphik', 'Inter', 'sans-serif'],
-      serif: ['Merriweather', 'serif']
+      serif: ['Merriweather', 'serif'],
+      primary: 'Poppins'
     },
     extend: {
       screens: {
@@ -15,6 +16,25 @@ module.exports = {
         lg: '1024px',
         xl: '1280px',
         xxl: '1536px'
+      },
+      backgroundImage: {
+        gradientBg: "url('/src/assets/img/bg.png')"
+      },
+      keyframes: {
+        shake: {
+          '0%': {
+            transform: 'translate(3px, 0)'
+          },
+          '50%': {
+            transform: 'translate(-3px, 0)'
+          },
+          '100%': {
+            transform: 'translate(0, 0)'
+          }
+        }
+      },
+      animation: {
+        shake: 'shake 150ms 2 linear'
       }
     },
     variants: {

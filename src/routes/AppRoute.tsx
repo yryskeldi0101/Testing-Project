@@ -12,6 +12,7 @@ const AppRoute = () => {
         <Route path="users" element={<UsersPage />} />
         <Route path="weather" element={<WeatherPage />} />
       </Route>
+      <Route path="*" element={<h1>404 NOT FOUND</h1>} />
     </Routes>
   );
 };

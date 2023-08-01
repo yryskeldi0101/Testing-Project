@@ -21,7 +21,7 @@ const MainPage = () => {
     setArray(filtered);
   };
   return (
-    <div className="flex flex-col items-center w-full h-screen bg-gradientBg">
+    <div className="flex flex-col items-center w-full h-screen">
       <button onClick={clickHandler} className="btn btn-primary my-10">
         Click me
       </button>
@@ -37,13 +37,16 @@ const MainPage = () => {
           <tbody>
             {array?.map((item) => {
               return (
-                <tr className="hover:bg-base-200 text-blue-800 text-2xl font-bold" key={item.id}>
+                <tr
+                  className="hover:bg-black/30 hover:text-blue-500 text-gray-300 text-2xl font-bold"
+                  key={item.id}
+                >
                   <th>{item.number}</th>
                   <td>{item.item}</td>
                   <td>
                     <button
                       onClick={() => deleteHandler(item.id)}
-                      className="btn btn-outline btn-primary"
+                      className="btn btn-outline text-gray-300 border-purple-300 border border-solid hover:bg-inherit hover:border-purple-500 hover:text-purple-500 "
                     >
                       Delete
                     </button>

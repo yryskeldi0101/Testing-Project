@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <main className=" w-f h-full">
+      <main className=" w-f h-full bg-gradientBg w-full min-h-screen">
         <div className="mt-20">
           <Outlet />
         </div>

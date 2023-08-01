@@ -78,7 +78,7 @@ const UsersPage = () => {
             <div className=" p-5 flex flex-col justify-center items-center">
               <span className="loading loading-spinner loading-lg"></span>
               <h1 className="text-4xl text-gray-700 font-bold w-80 mt-5">
-                Sorry the user you were looking for was not found!
+                Sorry! The user with this name not found!
               </h1>
             </div>
           )}

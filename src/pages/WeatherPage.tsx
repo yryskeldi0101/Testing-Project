@@ -18,49 +18,9 @@ import {
 } from 'react-icons/bs';
 import { TbTemperatureCelsius } from 'react-icons/tb';
 import { ImSpinner8 } from 'react-icons/im';
+import { WeatherResponse } from '../utils/types';
 
 const APIkey = 'bcf8185b90ef3ec8d128dff29fb7fd18';
-
-interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
-
-interface MainWeatherData {
-  temp: number;
-  feels_like: number;
-  pressure: number;
-  humidity: number;
-  temp_min: number;
-  temp_max: number;
-}
-
-interface Wind {
-  speed: number;
-  deg: number;
-}
-
-interface Clouds {
-  all: number;
-}
-
-interface SystemData {
-  country: string;
-  sunrise: number;
-  sunset: number;
-}
-
-interface WeatherResponse {
-  weather: Weather[];
-  main: MainWeatherData;
-  wind: Wind;
-  clouds: Clouds;
-  sys: SystemData;
-  name: string;
-  visibility: number;
-}
 
 interface IinputValue {
   value: string;
@@ -77,9 +37,8 @@ const WeatherPage = () => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (inputValue !== '') {
       setLocation(inputValue);
     }
@@ -165,12 +124,14 @@ const WeatherPage = () => {
           </div>
           <div className=" my-20">
             <div className="flex justify-center items-center ">
-              <div className=" text-[144px] leading-none font-light">{data.main.temp} </div>
+              <div className=" text-[144px] leading-none font-light">
+                {data.main.temp.toFixed()}
+              </div>
               <div className=" text-4xl">
                 <TbTemperatureCelsius />
               </div>
             </div>
-            <div className=" capitalize text-center ">{data.weather[0].description}</div>
+            <div className="capitalize text-center ">{data.weather[0].description}</div>
           </div>
           <div className="max-w-[378px] mx-auto flex flex-col gap-y-6">
             <div className="flex justify-between">
